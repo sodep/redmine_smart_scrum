@@ -1,0 +1,3 @@
+= smart_scrum
+
+Description goes here

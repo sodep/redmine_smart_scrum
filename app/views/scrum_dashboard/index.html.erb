@@ -1,0 +1,67 @@
+<%= javascript_tag "var AUTH_TOKEN= #{form_authenticity_token.inspect};" if protect_against_forgery? -%>
+
+<h2>Scrum Dashboard</h2>
+
+<table id="sprint_filter_table">
+ <tr>
+    <td>Sprints:</td>
+    <td colspan="3">
+      <%= select_tag 'sprint_names[]', options_for_select(@sprint_names, @sprint_names), :multiple => false %>
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td colspan="3">
+       <input type="button" value="By Sprint" id="select_sprint_button" />
+    </td>
+  </tr>
+</table>
+<br/>
+
+<table id="users_filter_table">
+ <tr>
+    <td>Users:</td>
+    <td colspan="3">
+        <%= select_tag 'users_names[]', options_for_select(@users, @users), :multiple => false %>
+ 
+    </td>
+  </tr>
+  <tr>
+    <td></td>
+    <td colspan="3">
+       <input type="button" value="By User" id="select_user_button" />
+    </td>
+  </tr>
+</table>
+<br />
+<div id="general_msg_holder"></div>
+
+<br />
+<br />
+
+<table>
+   <tr>
+      <td>
+        <div id="holder1" style="border: 0.1rem dotted grey; width:80rem; height:25rem;"></div>
+      <td>
+     </tr>
+  <tr>
+      <td>
+         <div id="holder2" style="border: 0.1rem dotted grey; width:80rem; height:25rem;"></div>
+      </td>
+   </tr>
+</table>
+<div id="ajax-indicator" style="display: none;">
+   <span>Loading...</span>
+</div>
+
+<% content_for :header_tags do %>
+<%= stylesheet_link_tag 'velocity', :plugin => 'redmine_smart_scrum' %>
+<%= javascript_include_tag 'jquery-1.6.2.js', :plugin => 'redmine_smart_scrum' %>
+<%= javascript_include_tag 'raphael-min.js', :plugin => 'redmine_smart_scrum' %>
+<%= javascript_include_tag 'g.raphael-min.js', :plugin => 'redmine_smart_scrum' %>
+<%= javascript_include_tag 'g.line-min.js', :plugin => 'redmine_smart_scrum' %>
+<%= javascript_include_tag 'index', :plugin => 'redmine_smart_scrum' %>
+
+<% end %>
+    

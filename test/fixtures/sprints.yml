@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  id: 1
+  starts_on: 2012-04-27
+  ends_on: 2012-04-27
+  name: MyString
+two:
+  id: 2
+  id: 1
+  starts_on: 2012-04-27
+  ends_on: 2012-04-27
+  name: MyString
